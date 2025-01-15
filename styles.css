@@ -572,7 +572,6 @@
 #footer .info-item {
     text-align: center;
     min-width: 120px;
-    display: block;
 }
 
 #footer .info-item h3 {
@@ -616,24 +615,17 @@
     }
 
     #footer .info-item a {
-        font-size: 18px;  /* Smaller font size */
+        font-size: 10px;  /* Smaller font size */
         padding: 3px 0;
     }
 
     #footer .contact-description {
-        font-size: 14px;
+        font-size: 10px;
         margin: 5px 0;
     }
 }
 
 /* Responsive Design */
-
-/* Hide text on mobile devices */
-@media (max-width: 768px) {
-    .info-item {
-        display: none;
-    }
-}
 @media (max-width: 1024px) {
     .signup-container {
         width: 90%;
