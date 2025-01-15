@@ -572,6 +572,7 @@
 #footer .info-item {
     text-align: center;
     min-width: 120px;
+    display: block;
 }
 
 #footer .info-item h3 {
@@ -626,6 +627,13 @@
 }
 
 /* Responsive Design */
+
+/* Hide text on mobile devices */
+@media (max-width: 768px) {
+    .info-item {
+        display: none;
+    }
+}
 @media (max-width: 1024px) {
     .signup-container {
         width: 90%;
