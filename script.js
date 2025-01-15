@@ -38,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     mobileToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // Change hamburger icon to close icon and vice versa
-        mobileToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        mobileToggle.classList.toggle('active'); // This will transform the hamburger to X
     });
 
     // Close mobile menu when clicking a link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            mobileToggle.textContent = '☰';
+            mobileToggle.classList.remove('active');
         });
     });
 
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', (e) => {
         if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
             navLinks.classList.remove('active');
-            mobileToggle.textContent = '☰';
+            mobileToggle.classList.remove('active');
         }
     });
 });
