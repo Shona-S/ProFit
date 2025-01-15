@@ -31,29 +31,30 @@ ctaButton.addEventListener('mouseout', () => {
     ctaButton.style.transform = 'translateY(0)'; 
 });
 
-// Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
     const mobileToggle = document.querySelector('.mobile-nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
         navLinks.classList.toggle('active');
-        mobileToggle.classList.toggle('active'); // This will transform the hamburger to X
+        // Toggle between hamburger and close icons
+        this.innerHTML = navLinks.classList.contains('active') ? '&times;' : '&#9776;';
     });
 
-    // Close mobile menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+            navLinks.classList.remove('active');
+            mobileToggle.innerHTML = '&#9776;';
+        }
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            mobileToggle.classList.remove('active');
+            mobileToggle.innerHTML = '&#9776;';
         });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            navLinks.classList.remove('active');
-            mobileToggle.classList.remove('active');
-        }
     });
 });
