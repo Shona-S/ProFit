@@ -29,8 +29,7 @@
     color: #333;
     padding: 5px;
 }
-
-/* Default navbar links */
+/* Hide nav links by default */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -72,54 +71,32 @@
     .nav-links.active {
         display: flex;
     }
-
-    /* Style for the hamburger icon */
-    .mobile-nav-toggle .menu-icon {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #333;
-        position: relative;
-        transition: background-color 0.3s;
-    }
-
-    .mobile-nav-toggle .menu-icon::before,
-    .mobile-nav-toggle .menu-icon::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #333;
-        transition: transform 0.3s;
-    }
-
-    .mobile-nav-toggle .menu-icon::before {
-        top: -8px;
-    }
-
-    .mobile-nav-toggle .menu-icon::after {
-        bottom: -8px;
-    }
-
-    /* When menu is active */
-    .mobile-nav-toggle.active .menu-icon {
-        background-color: transparent;
-    }
-
-    .mobile-nav-toggle.active .menu-icon::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .mobile-nav-toggle.active .menu-icon::after {
-        transform: rotate(-45deg);
-        bottom: 0;
-    }
 }
 
-/* Navbar scrolled effect */
+
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
 .navbar.scrolled {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -159,6 +136,58 @@
 
 .signup-btn:hover {
     background-color: #1E88E5;
+}
+/* Hamburger Menu Icon */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.menu-icon {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: transform 0.3s;
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    bottom: -8px;
+}
+
+.mobile-nav-toggle.active .menu-icon {
+    background-color: transparent;
+}
+
+.mobile-nav-toggle.active .menu-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.mobile-nav-toggle.active .menu-icon::after {
+    transform: rotate(-45deg);
+    bottom: 0;
 }
 
 /* Hero Section */
@@ -610,12 +639,12 @@
     }
 
     #footer .info-item h3 {
-        font-size: 10px;  /* Smaller font size */
+        font-size: 14px;  /* Smaller font size */
         margin-bottom: 4px;
     }
 
     #footer .info-item a {
-        font-size: 14px;  /* Smaller font size */
+        font-size: 18px;  /* Smaller font size */
         padding: 3px 0;
     }
 
