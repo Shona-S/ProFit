@@ -580,15 +580,34 @@
 
 @media (max-width: 768px) {
     #footer {
-        padding: 15px 10px;
+        padding: 10px 5px;
+        min-height: auto;  /* Remove fixed height for better responsiveness */
     }
 
     #footer .contact-info {
-        gap: 15px;
+        gap: 10px;
+        flex-direction: column;  /* Stack items vertically */
+        margin: 10px 0;
     }
 
     #footer .info-item {
-        min-width: 30px;
+        min-width: 100%;  /* Full width for better spacing */
+        margin: 5px 0;
+    }
+
+    #footer .info-item h3 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    #footer .info-item a {
+        font-size: 20px;  /* Slightly smaller font size for mobile */
+        padding: 5px 0;
+    }
+
+    #footer .contact-description {
+        font-size: 14px;
+        margin: 5px 0;
     }
 }
 
