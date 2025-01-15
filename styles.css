@@ -591,21 +591,25 @@
     }
 
     #footer .info-item {
+        gap: 10px;
         min-width: 20px;  /* Full width for better spacing */
         margin: 5px 0;
     }
 
     #footer .info-item h3 {
+        gap: 10px;
         font-size: 16px;
         margin-bottom: 4px;
     }
 
     #footer .info-item a {
+        gap: 10px;
         font-size: 20px;  /* Slightly smaller font size for mobile */
         padding: 5px 0;
     }
 
     #footer .contact-description {
+        gap: 10px;
         font-size: 14px;
         margin: 5px 0;
     }
