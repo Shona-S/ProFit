@@ -610,17 +610,17 @@
     }
 
     #footer .info-item h3 {
-        font-size: 14px;  /* Smaller font size */
+        font-size: 10px;  /* Smaller font size */
         margin-bottom: 4px;
     }
 
     #footer .info-item a {
-        font-size: 10px;  /* Smaller font size */
+        font-size: 14px;  /* Smaller font size */
         padding: 3px 0;
     }
 
     #footer .contact-description {
-        font-size: 10px;
+        font-size: 14px;
         margin: 5px 0;
     }
 }
